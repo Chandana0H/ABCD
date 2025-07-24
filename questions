@@ -1,0 +1,6 @@
+6. Connect Your Self-Healing Processor
+The agent will forward alerts to your processor via HTTP (localhost).
+Implement your processor logic to handle alerts and attempt remediation.
+Update alert status as required (succeeded, failed, etc.). --code for this , where will the agent be deployed how will we connect to cluster to run the diagnostics  and how to expose api to oss agent and how can we test the api and diagnostics automation
+
+checks should include possible scenarios ignesters might fail (HPA not working, OOM killed, Crashloopbackoff, Unhealthy instnace in the ring , network, rollout operator failing , two of the ingesters in zone being unhealthy
