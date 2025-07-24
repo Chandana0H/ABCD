@@ -14,3 +14,6 @@ self_healing_processor/
 ├── config.py             # Config loader (env vars, regions)
 ├── requirements.txt
 └── Dockerfile
+
+give remediation steps in case of unhealthy instance in the ring we have to forget that instance from the ring 
+https://grafana.com/docs/mimir/latest/references/architecture/hash-ring/#components-that-use-a-hash-ring
