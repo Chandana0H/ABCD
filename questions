@@ -1,0 +1,19 @@
+6. Connect Your Self-Healing Processor
+The agent will forward alerts to your processor via HTTP (localhost).
+Implement your processor logic to handle alerts and attempt remediation.
+Update alert status as required (succeeded, failed, etc.). --code for this , where will the agent be deployed how will we connect to cluster to run the diagnostics  and how to expose api to oss agent and how can we test the api and diagnostics automation
+
+checks should include possible scenarios ignesters might fail (HPA not working, OOM killed, Crashloopbackoff, Unhealthy instnace in the ring , network, rollout operator failing , two of the ingesters in zone being unhealthy
+
+give working processor like this 
+self_healing_processor/
+├── main.py               # FastAPI app
+├── diagnostics.py        # Contains health check logic
+├── remediation.py        # Contains fix/remediation logic
+├── utils.py              # Helpers (e.g., API wrappers, logging)
+├── config.py             # Config loader (env vars, regions)
+├── requirements.txt
+└── Dockerfile
+
+give remediation steps in case of unhealthy instance in the ring we have to forget that instance from the ring 
+https://grafana.com/docs/mimir/latest/references/architecture/hash-ring/#components-that-use-a-hash-ring
